@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login || Lucky</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url('./sun.jpg');
+    background-color: green;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: 1000vw;
+    width: 100%;
+    height: 100%;
+}
+nav{
+    width: 100%;
+    background-color: ;
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 50px;
+    width: 40rem;
+    height: 2rem;
+}
+ul li {
+    width: 90px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+ul li:first-child{
+    color: red;
+}
+ul li:hover {
+    color: rgb(0, 255, 255);
+}
+.home-2{
+    margin: 10rem auto;
+    width: 70rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 6rem;
+}
+.home-2 strong{
+    font-size: 5rem;
+    color: rgb(255, 221, 0);
+}
+
+.home{
+    margin: 10rem auto;
+    width: 70rem;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+.home b{
+    font-size: 4rem;
+    color: blue;
+    letter-spacing: 5px;
+}
+.home p{
+    font-size: 20px;
+    color: white;
+    padding: 1rem;
+}
+.box{
+    opacity: 0;
+    width: 33rem;
+    height: 35rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    left: 31%;
+    top: -60rem;
+    margin: 10rem auto;
+    gap: 50px;
+    border: 1px blueviolet solid;
+    border-radius: 55px;
+    background-color: transparent;
+    transition: .9s;
+}
+.box2{
+    opacity: 0;
+    width: 33rem;
+    position: absolute;
+    /* top: 2rem; */
+    top: -60rem;
+    left: 31%;
+        height: 40rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 10rem auto;
+    gap: 50px;
+    border: 1px blueviolet solid;
+    border-radius: 55px;
+    background-color: transparent;
+    transition: .9s;
+    
+}
+.box:hover,.box2:hover{
+    transform:scale(1.2);
+    transition: .5s;
+}
+h1{
+    color: whitesmoke;
+    font-size: 3rem;
+}
+.inp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+}
+.inp input{
+    font-size: 18px;
+    width: 30rem;
+    padding: 15px;
+    border-radius: 35px;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    border: 1px solid rgb(55, 54, 54);
+} 
+.inp input:active{
+    border: none;
+}  
+::placeholder{
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    letter-spacing: 3px;
+}
+.btn{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    height: auto;
+    width: 50rem;
+}
+
+
+button {  
+    cursor: pointer;
+    position: relative;
+    padding: 0.75em 1em;
+    font: 1rem "Orbitron";
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    /* text-shadow: 0 5px 20px rgba(192, 36, 0, 0.4), 0 2px 2px rgba(192, 36, 0, 0.4); */
+    background-image: radial-gradient(100% 75% at 50% 100%, #9d5281 0%, #c40900 100%);
+    border: none;
+    border-radius: 100px;
+    box-shadow: inset 0 3px 15px 0 rgba(174, 32, 0, 1), inset 0 -3px 0 0 rgb(151, 86, 157), inset 0 40px 0 0 rgba(163, 40, 182, 0.4), inset 0 20px 20px 0 rgba(248, 191, 69, 1), 0 0 0 8px #000, 0 9px 0 0 #444, 0 0 20px 0 rgba(254, 210, 98, 0.4), 0 40px 20px -30px rgba(254, 210, 98, 0.2);
+}
+    button:hover{
+    background-image: radial-gradient(
+      100% 75% at 50% 100%,
+      #dd00ff 0%,
+      #a20700 100%
+    );
+    transform: scale(1.1);
+    transition: .4s;
+  }
+
+  button:active{
+    outline: none;
+    color: #f9e3bf;
+    background-image: radial-gradient(
+      100% 75% at 50% 100%,
+      #92368e 0%,
+      #850600 100%
+    );
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.4),
+      inset 0 0 10px rgba(133, 6, 0, 1), inset 0 3px 15px 0 rgba(174, 32, 0, 1),
+      inset 0 40px 0 0 rgba(254, 210, 98, 0.3),
+      inset 0 20px 20px 0 rgba(206, 98, 195, 0.75), 0 0 0 8px #000,
+      0 9px 0 0 #444;
+  }
+
+
+/* .btn button{
+    font-size: 2rem;
+    color: rgb(255, 196, 0);
+    background: rgba(0, 255, 170, 0.557);
+    border: 1px solid blueviolet;
+    padding: 5px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    
+    } */
+    .btn h4{
+        color:  radial-gradient(100% 75% at 50% 100%, #9d5281 0%, #c40900 100%);
+        font-size: 23px;
+        cursor: pointer;
+
+    }
+    
+    </style>
+<body>
+<nav>
+        <ul type="none">
+            <li><a href="index.html" style="text-decoration:none;">Home</li></a>
+            <li>About</li>
+            <li>Contact</li>
+            <li id="txt-ch">Login</li>
+        </ul>
+    </nav>
+
+    <!-- Home Page Without login -->
+<div class="container">
+    
+
+    <div class="home-2" id="home-wl">
+        <strong>Hello, Welcome to Our WebSite </strong>
+            
+           <div style="display: flex; gap: 15rem;">
+            <button class="bwl" onclick="login()">Login First</button>
+            <button class="bwl" onclick="Create()">Create Account Free</button>
+           </div>
+    </div>
+
+    <!-- HOME PAGE when login -->
+    <div class="home" id="home-page">
+        <b>Welcome Back <span id="sp"></span></b>
+        
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur quis voluptas, itaque quasi adipisci ad nesciunt qui sapiente dolor a, incidunt perferendis quaerat voluptate iste consequuntur dolore. Quidem enim dolor distinctio molestiae nostrum deleniti delectus suscipit, laboriosam totam tempora commodi possimus. Facere fugiat unde ad cum officiis error sunt officia esse provident adipisci recusandae delectus, natus reiciendis. Perferendis culpa repudiandae facere explicabo minus error iure quisquam dolorum numquam sed, tempore non pariatur ipsum voluptas vero illum iste? Dolor asperiores dolorum rerum esse, nostrum eos id velit culpa quam ab temporibus adipisci? Quo provident consectetur fugiat neque accusantium animi libero modi minima, at dolorem iusto, quam nobis molestias saepe delectus fuga blanditiis eum distinctio voluptates. Quo praesentium deleniti voluptatem commodi perferendis expedita rerum numquam aliquam cumque repellat hic mollitia amet eius molestiae, laborum alias. Tempore esse eum hic sunt praesentium reiciendis laborum repellendus assumenda officia expedita debitis nostrum commodi explicabo reprehenderit id facere odio animi, obcaecati harum? Nisi pariatur, eveniet amet dolorem quisquam, sint dolore dignissimos alias nesciunt officia repellendus? In, officiis eum rerum, magnam expedita voluptate vero explicabo at unde debitis distinctio perspiciatis maxime voluptates numquam non labore sit laboriosam animi aspernatur, natus harum dignissimos nostrum? Dolore, temporibus harum officia voluptate dolor soluta deserunt perspiciatis earum. Placeat excepturi cum a eos dicta beatae, fugit nobis sed eius similique ipsam sunt et est porro quisquam ipsa blanditiis recusandae modi vitae itaque? Voluptas fuga magnam quaerat, explicabo odit voluptatum quae possimus facere iusto? Labore illo similique cum libero atque voluptatum quisquam recusandae? Nesciunt incidunt tempora illo sunt veritatis ipsam sapiente laborum numquam dolorum ratione dignissimos repellendus, alias enim fuga cumque velit consectetur excepturi earum nobis a rem? Mollitia rem labore voluptas natus est illum ad sint fugit repellat iste libero culpa ipsam animi quasi unde, id perferendis facere! Veniam.</p>
+        
+    </div>
+
+
+
+    <form class="box Login" id="b1">
+        <h1>Login</h1>
+        <div class="inp">
+            <input type="email" id="Lemail" placeholder="Enter Your Email">
+            <!-- <label id="em1" for="em">Enter Your Email</label> -->
+            <br><br>
+            <input type="password" id="Lpass" placeholder="Enter Your Password">
+            <!-- <label for="pass">Enter Your Password</label> -->
+        </div>
+        <div class="btn">
+            <button class="btn-byt" id="btn-check" onclick="Check()" >Submit</button>
+            <h4 id="btn1">Sign Up</h4>
+        </div>
+</form>
+<form class="box2 Sign Up" id="b2">
+    <h1>Sign Up</h1>
+    <div class="inp">
+        <input type="text" id="Sfname" placeholder="Enter Your First Name">
+        <!-- <label id="em1" for="em">Enter Your Email</label> -->
+        <br>
+        <input type="text" id="Slname" placeholder="Enter Your Last Name">
+        <br>
+        <input type="email" id="Semail" placeholder="Enter Your Email">
+        <br>
+        <input type="password" id="Spass" placeholder="Enter Your Password">
+        <!-- <label for="pass">Enter Your Password</label> -->
+    </div>
+    <div class="btn">
+        <button class="btn-byt" onclick="SaveData()" id="btn-save" type="button" >Submit</button>
+        <h4 id="btn2">Sign In</h4>
+    </div>
+</form>
+</div>
+<script>
+    //  For Toggle Pages
+const Box1 = document.getElementById("b1");
+const Box2 = document.getElementById("b2");
+let BtnSignUp = document.getElementById("btn1");
+let BtnSignIn = document.getElementById("btn2");
+let TxtCh = document.getElementById("txt-ch");
+
+document.getElementById('sp').innerText = localStorage.getItem('First Name')
+
+function login()
+{
+    Box2.style.opacity = "0";
+    Box2.style.top = "-60rem";
+    Box1.style.opacity = "1";
+    Box1.style.top = "2rem";
+    document.getElementById('home-wl').style.display = 'none';
+    TxtCh.innerHTML = "Sign Up";
+    
+}
+function Create() {
+    Box1.style.opacity = "0";
+    Box1.style.top = "-60rem";
+    Box2.style.opacity = "1";
+    Box2.style.top = "2rem";
+    document.getElementById('home-wl').style.display = 'none';
+
+    if (Box1.style.opacity === "0") {
+      TxtCh.innerHTML = "Sign In";
+    } else {
+      TxtCh.innerHTML = "Sign Up";
+    }
+}
+BtnSignUp.addEventListener("click", () => {
+  Box1.style.opacity = "0";
+  Box1.style.top = "-60rem";
+  Box2.style.opacity = "1";
+  Box2.style.top = "2rem";
+  if (Box1.style.opacity === "0") {
+    TxtCh.innerHTML = "Sign In";
+  } else {
+    TxtCh.innerHTML = "Sign Up";
+  }
+});
+TxtCh.addEventListener("click", () => {
+  if (Box1.style.opacity === "1") {
+    Box1.style.opacity = "0";
+    Box1.style.top = "-60rem";
+    Box2.style.opacity = "1";
+    Box2.style.top = "2rem";
+    TxtCh.innerHTML = "Sign In";
+  } else {
+    TxtCh.innerHTML = "Sign Up";
+    Box2.style.opacity = "0";
+    Box2.style.top = "-60rem";
+    Box1.style.opacity = "1";
+    Box1.style.top = "2rem";
+    document.getElementById('home-wl').style.display = 'none';
+    document.getElementById('home-page').style.display = ''
+
+  }
+});
+BtnSignIn.addEventListener("click", () => {
+  Box2.style.opacity = "0";
+  Box2.style.top = "-60rem";
+  Box1.style.opacity = "1";
+  Box1.style.top = "2rem";
+  if (Box2.style.opacity === "0") {
+    TxtCh.innerHTML = "Sign Up";
+  } else {
+    TxtCh.innerHTML = "Sign In";
+  }
+});
+
+// For Local Database
+function SaveData() {
+  const Sfname = document.getElementById("Sfname").value;
+  const Slname = document.getElementById("Slname").value;
+  const Semail = document.getElementById("Semail").value;
+  const Spass = document.getElementById("Spass").value;
+
+  if (Sfname == 0) {
+    alert("First Name Could Not Be Blanked");
+  } else if (Slname == 0) {
+    alert("Last Name Could Not Be Blanked");
+  } else if (Semail == 0 && Semail != "@") {
+    alert("Email Could Not Be Blanked");
+  } else if (Spass == 0) {
+    alert("Password Could Not Be Blanked");
+  } else {
+    (UserFirstName = localStorage.setItem("First Name", Sfname)),
+      (UserLastName = localStorage.setItem("Last Name", Slname)),
+      (UserEmail = localStorage.setItem("Email", Semail)),
+      (UserPass = localStorage.setItem("Password", Spass)),
+      (document.getElementById("btn-save").type = "submit");
+  }
+}
+
+function Check() {
+  const Lemail = document.getElementById("Lemail").value;
+  const Lpass = document.getElementById("Lpass").value;
+
+  if (
+    Lemail === localStorage.getItem("Email") &&
+    Lpass === localStorage.getItem("Password")
+  ) {
+    Box1.style.opacity = "0";
+    Box1.style.top = "-60rem";
+    Box2.style.opacity = "0";
+    Box2.style.top = "-60rem";
+    document.getElementById('home-page').style.display = 'flex'
+    TxtCh.innerHTML = 'Logout';
+    document.getElementById("btn-check").type = "button";
+
+  } else {
+    alert("Email or Passwors Is Wrong or Not Exist");
+  }
+}
+
+</script>
+</body>
+</html>
